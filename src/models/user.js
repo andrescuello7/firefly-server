@@ -16,6 +16,18 @@ const User = mongoose.Schema({
         required: true,
         tim: true
     },
+    date: {
+        type: Date
+    },
+    locate: {
+        type: String
+    },
+    school: {
+        type: String
+    },
+    health: {
+        type: String
+    },
     photo: {
         type: String
     },
@@ -24,6 +36,9 @@ const User = mongoose.Schema({
     },
     likes: {
         type: String
+    },
+    admin: {
+        type: Boolean
     },
     CreateAdd: {
         type: Date,
