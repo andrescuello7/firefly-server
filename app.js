@@ -21,6 +21,7 @@ app.use(express.json());
 //routes
 app.use("/api/auth", require("./src/routes/auth"));
 app.use("/api/user", require("./src/routes/user"));
+app.use("/api/home", require("./src/routes/home"));
 
 //server
 app.listen(app.get('port'), () => {
