@@ -31,7 +31,18 @@ exports.Post = async (req, res) => {
     }
 };
 
-//Method post | create publication
+//Method get | read banner
+exports.GetBanner = async (req, res) => {
+    try {
+        const response = await Banner.find();
+        res.send(response);
+    } catch (error) {
+        console.log(error);
+        res.status(400).send("error in read post");
+    }
+};
+
+//Method post | create banner
 exports.PostBanner = async (req, res) => {
     try {
         const postBanner = new Banner({
@@ -39,8 +50,8 @@ exports.PostBanner = async (req, res) => {
             createBy: req.user.id,
             CreateAdd: Date.now(),
         });
-        const create = await postBanner.save();
-        res.status(200).send(create);
+        const response = await postBanner.save();
+        res.status(200).send(response);
         // res.status(200).send("create post with exit");
     } catch (error) {
         console.log(error);
@@ -48,7 +59,7 @@ exports.PostBanner = async (req, res) => {
     }
 };
 
-//Metodo para modificar datos del banner
+//Method update of banner banner
 exports.PutBanner = async (req, res) => {
     const { idBanner } = req.params;
     try {

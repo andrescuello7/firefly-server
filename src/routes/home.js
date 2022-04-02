@@ -10,6 +10,8 @@ router.post('/', auth, postCollections.Post)
 router.get('/', postCollections.Get)
 
 
+//Metodos Get of post
+router.get('/banner', postCollections.GetBanner)
 //Metodos Post of Banner
 router.post('/banner', auth, postCollections.PostBanner)
 
