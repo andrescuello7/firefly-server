@@ -1,20 +1,21 @@
 const mongoose = require('mongoose')
 
-const Post = mongoose.Schema({
+const Banner = mongoose.Schema({
     title: {
         type: String,
+        required: true,
         tim: true
     },
     description: {
         type: String,
+        required: true,
         tim: true
     },
-    createBy: {
+    createBy:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
     photo: {
-        required: true,
         type: String
     },
     CreateAdd: {
@@ -23,4 +24,4 @@ const Post = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Post', Post)
+module.exports = mongoose.model('Banner', Banner)
