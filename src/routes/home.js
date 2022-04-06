@@ -3,19 +3,15 @@ const postCollections = require('../controllers/postCollection')
 const router = express.Router()
 const auth = require('../middlewares/auth')
 
-//Metodos Post of post
-router.post('/', auth, postCollections.Post)
-
-//Metodos Get of post
+//Metodos Get, Post, Delete of post
 router.get('/', postCollections.Get)
+router.post('/', auth, postCollections.Post)
+router.delete('/:idDelete', postCollections.Delete)
 
 
-//Metodos Get of post
+//Metodos Get, Post, Put of banner
 router.get('/banner', postCollections.GetBanner)
-//Metodos Post of Banner
 router.post('/banner', auth, postCollections.PostBanner)
-
-//Metodos Get of Banner
 router.put('/banner/:idBanner', auth, postCollections.PutBanner)
 
 

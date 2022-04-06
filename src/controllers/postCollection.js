@@ -15,8 +15,21 @@ exports.Get = async (req, res) => {
     }
 };
 
-//Method post | create publication
+//Method delete | delete publication
 exports.Post = async (req, res) => {
+    try {
+        const deletePost = await Post.findById(idDelete);
+        const response = await deletePost.remove();
+        res.status(200).send(response);
+    } catch (error) {
+        console.log(error);
+        res.status(400).send("error in delete post");
+    }
+};
+
+//Method post | create publication
+exports.Delete = async (req, res) => {
+    const { idDelete } = req.params;
     try {
         const postPublication = new Post({
             ...req.body,
