@@ -27,7 +27,7 @@ exports.Post = async (req, res) => {
         res.status(200).send(create);
     } catch (error) {
         console.log(error);
-        res.status(400).send("error in delete post");
+        res.status(400).send("error in write post");
     }
 };
 
@@ -40,7 +40,7 @@ exports.Delete = async (req, res) => {
         res.status(200).send(response);
     } catch (error) {
         console.log(error);
-        res.status(400).send("error in write post");
+        res.status(400).send("error in delete post");
     }
 };
 
@@ -65,7 +65,6 @@ exports.PostBanner = async (req, res) => {
         });
         const response = await postBanner.save();
         res.status(200).send(response);
-        // res.status(200).send("create post with exit");
     } catch (error) {
         console.log(error);
         res.status(400).send("error in write post of banner");
