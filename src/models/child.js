@@ -7,7 +7,7 @@ const Child = mongoose.Schema({
         tim: true
     },
     gender: {
-        type: Boolean,
+        type: String,
         required: true
     },
     createBy: {
