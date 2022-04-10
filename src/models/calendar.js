@@ -1,29 +1,19 @@
 const mongoose = require('mongoose')
 
-const Jobs = mongoose.Schema({
-    user: {
-        type: String,
-    },
-    photo: {
-        type: String
-    },
+const Calendar = mongoose.Schema({
     title: {
         type: String,
+        required: true,
         tim: true
     },
     description: {
         type: String,
+        required: true,
         tim: true
     },
-    child: {
-        type: String,
-        required: true,
-    },
-    inWeek: {
-        type: String,
-    },
-    inDay: {
-        type: String,
+    CreateDateTime: {
+        type: Date,
+        required: true
     },
     createBy: {
         type: mongoose.Schema.Types.ObjectId,
@@ -35,4 +25,4 @@ const Jobs = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Jobs', Jobs)
+module.exports = mongoose.model('Calendar', Calendar)

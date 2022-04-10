@@ -1,6 +1,7 @@
 const express = require('express')
 const postCollections = require('../controllers/postCollection')
 const bannerCollections = require('../controllers/bannerCollection')
+const calendarCollection = require('../controllers/calendarCollection')
 const jobsCollection = require('../controllers/jobsCollection')
 const router = express.Router()
 const auth = require('../middlewares/auth')
@@ -17,11 +18,17 @@ router.post('/banner', auth, bannerCollections.PostBanner)
 router.put('/banner/:idBanner', auth, bannerCollections.PutBanner)
 
 
-//Metodos Get, Post, Put of banner
+//Metodos Get, Post, Put of job
 router.get('/jobs', jobsCollection.JobGet)
 router.post('/jobs', auth, jobsCollection.JobPost)
 router.put('/jobs/:idJobs', auth, jobsCollection.JobPut)
 router.delete('/jobs/:idDelete', auth, jobsCollection.JobDelete)
+
+//Metodos Get, Post, Put of calendar
+router.get('/calendar', calendarCollection.CalendarGet)
+router.post('/calendar', auth, calendarCollection.CalendarPost)
+router.put('/calendar/:idDate', auth, calendarCollection.CalendarPut)
+router.delete('/calendar/:idDelete', auth, calendarCollection.CalendarDelete)
 
 
 module.exports = router;
