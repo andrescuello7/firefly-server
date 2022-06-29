@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Post = mongoose.Schema({
+const Images = mongoose.Schema({
     createBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
@@ -15,4 +15,4 @@ const Post = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Post', Post)
+module.exports = mongoose.model('Images', Images)
