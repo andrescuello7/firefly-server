@@ -16,28 +16,16 @@ const User = mongoose.Schema({
         required: true,
         tim: true
     },
-    date: {
-        type: Date
+    admin: {
+        type: Boolean
     },
-    locate: {
-        type: String
-    },
-    school: {
-        type: String
-    },
-    health: {
-        type: String
+    move: {
+        type: Boolean
     },
     photo: {
         type: String
     },
-    years: {
-        type: Number
-    },
-    likes: {
-        type: String
-    },
-    admin: {
+    collaborator: {
         type: Boolean
     },
     CreateAdd: {

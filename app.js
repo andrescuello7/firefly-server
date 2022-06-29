@@ -10,7 +10,7 @@ const app = express();
 mongoose.connect(`mongodb+srv://${process.env.user}:${process.env.password}@cluster0.qa9gg.mongodb.net/firefly?retryWrites=true&w=majority`);
 
 //setting
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 app.use(cors())
 
 //middleware
